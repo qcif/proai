@@ -13,6 +13,22 @@
     <servlet-name>ProviderServlet</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
+  
+  <!-- Restlet adapter -->  
+   <servlet>  
+      <servlet-name>RestletServlet</servlet-name>  
+      <servlet-class>org.restlet.ext.servlet.ServerServlet</servlet-class>
+      <init-param>
+            <!-- Application class name -->
+            <param-name>org.restlet.application</param-name>
+            <param-value>au.edu.qcif.ws.ProaiWebServiceApplication</param-value>
+      </init-param>
+   </servlet> 
+
+	<servlet-mapping>
+	   <servlet-name>RestletServlet</servlet-name>
+	   <url-pattern>/api/*</url-pattern>
+	</servlet-mapping>
 
   <!-- default mapping to provide the oai2.xsl from inside the container -->
   <servlet-mapping>
